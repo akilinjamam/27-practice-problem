@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practicing</title>
+
+    <style>
+        .main {
+            width: 600px;
+            background-color: orange;
+            margin: auto;
+            padding: 5px;
+            padding-bottom: 50px;
+            margin-top: 40px;
+            border-radius: 20px;
+        }
+
+        .box {
+            width: 300px;
+            height: 100px;
+            background-color: rgb(8, 232, 240);
+            border-radius: 20px;
+            margin: auto;
+            margin-bottom: 40px;
+        }
+
+        p {
+            text-align: center;
+            color: white;
+            padding-top: 20px;
+            font-size: 50px;
+        }
+
+        .box-2 {
+
+            width: 300px;
+            margin: auto;
+        }
+
+        .box-2 input {
+            border-radius: 20px;
+            border: 2px solid gray;
+            text-align: center;
+            margin-left: 60px;
+            height: 30px;
+        }
+
+        .box-2 button {
+            margin-left: 120px;
+            border-radius: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="box">
+            <p id="display">00</p>
+        </div>
+
+        <div class="box-2">
+            <input id="input" type="text" placeholder="please give a number"> <br> <br>
+            <button id="button-double">Double</button>
+        </div>
+        <br>
+        <div class="box-2">
+            <button id="button-tripple">Tripple</button>
+        </div>
+    </div>
+
+
+    <!-- this section is for js -->
+    <script>
+
+        function doubleInput(getInput) {
+
+            const inputText = getInput.value;
+            const inputNumber = parseFloat(inputText);
+
+            const makeDouble = inputNumber * 2;
+
+            const displayNumber = document.getElementById('display');
+
+            displayNumber.innerText = makeDouble
+
+            getInput.value = ''
+        }
+
+        function trippleInput(getInput) {
+
+            const inputText = getInput.value;
+            const inputNumber = parseFloat(inputText);
+
+            const makeDouble = inputNumber * 3;
+
+            const displayNumber = document.getElementById('display');
+
+            displayNumber.innerText = makeDouble
+
+            getInput.value = ''
+        }
+
+        document.getElementById('button-double').addEventListener('click', function () {
+
+            const getInput = document.getElementById('input');
+
+            doubleInput(getInput);
+
+        })
+
+        document.getElementById('button-tripple').addEventListener('click', function () {
+
+            const getInput = document.getElementById('input');
+
+            trippleInput(getInput);
+
+        })
+
+    </script>
+</body>
+
+</html>
